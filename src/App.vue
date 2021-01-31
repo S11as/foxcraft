@@ -1,14 +1,15 @@
 <template>
-  <Form/>
+  <Header/>
+  <router-view></router-view>
 </template>
 
 <script>
-import Form from '@/components/auth/Form'
+import Header from '@/components/Header/Header'
 
 export default {
   name: 'App',
   components: {
-    Form
+    Header
   }
 }
 </script>
