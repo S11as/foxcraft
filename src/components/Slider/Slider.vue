@@ -4,7 +4,6 @@
       :slides-per-view="1"
       :space-between="50"
       @swiper="onSwiper"
-      @slideChange="onSlideChange"
       :autoplay="true"
       :class="styles.heroMargin"
     >
@@ -76,9 +75,6 @@ export default {
   methods: {
     onSwiper (swiper) {
       this.slider = swiper
-    },
-    onSlideChange () {
-      console.log('slide change')
     }
   }
 }

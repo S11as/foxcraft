@@ -21,7 +21,12 @@
       </div>
     </div>
   </section>
-
+  <section>
+    <div class="container-fluid" :class="styles.newsBg"
+         :style="{ backgroundImage: 'url(' + bg + ')' }">
+      <NewsPreview/>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -30,12 +35,14 @@ import hero from '@/assets/hero-background.png'
 import logo from 'Assets/logo.png'
 import pickaxe1 from 'Icons/pickaxe1.svg'
 import pickaxe2 from 'Icons/pickaxe2.svg'
+import bg from 'Assets/main-bg.png'
 import Slider from '@/components/Slider/Slider'
-
+import NewsPreview from '@/components/News/NewsPreview'
 export default {
   name: 'Home',
   components: {
-    Slider
+    Slider,
+    NewsPreview
   },
   setup () {
     return {
@@ -43,7 +50,8 @@ export default {
       hero,
       logo,
       pickaxe1,
-      pickaxe2
+      pickaxe2,
+      bg
     }
   }
 }
