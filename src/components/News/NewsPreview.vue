@@ -18,7 +18,7 @@
       <img class="col-auto" :src="topLeft" alt="">
       <img class="col-auto" :src="topRight" alt="">
     </div>
-    <div :class="styles.rectsBot">
+    <div :class="styles.imageContainer">
       <img class="col-auto" :src="botLeft" alt="">
       <img class="col-auto" :src="botRight" alt="">
     </div>

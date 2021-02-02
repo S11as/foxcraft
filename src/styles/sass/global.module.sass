@@ -9,5 +9,18 @@ $dim-gray: #3E3C37
 body
   font-family: 'Open Sans', sans-serif !important
 
+.fluid
+  width: 100%
+
+.image-container
+  position: absolute
+  left: 0
+  width: calc(100vw - 20px)
+  display: flex
+  justify-content: space-between
+
 @mixin button-shadow
   box-shadow: 2px 2px 5px 1px rgba(0,0,0,.5)
+
+@mixin section-margin($m: 350px)
+  margin-top: $m

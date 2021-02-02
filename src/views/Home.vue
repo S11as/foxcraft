@@ -22,9 +22,10 @@
     </div>
   </section>
   <section>
-    <div class="container-fluid" :class="styles.newsBg"
+    <div class="fluid" :class="styles.newsBg"
          :style="{ backgroundImage: 'url(' + bg + ')' }">
       <NewsPreview/>
+      <Social/>
     </div>
   </section>
 </template>
@@ -38,9 +39,11 @@ import pickaxe2 from 'Icons/pickaxe2.svg'
 import bg from 'Assets/main-bg.png'
 import Slider from '@/components/Slider/Slider'
 import NewsPreview from '@/components/News/NewsPreview'
+import Social from '@/components/Social/Social'
 export default {
   name: 'Home',
   components: {
+    Social,
     Slider,
     NewsPreview
   },
