@@ -1,9 +1,19 @@
 .wrapper
+  @include transition()
   min-height: 80px
-  position: absolute
-  z-index: 10
+  position: fixed
+  z-index: 30
 
 .wrapper-inner
   padding-left: 100px !important
   padding-right: 100px !important
 
+.wrapper-active
+  @include transition()
+  background: $yellow
+  min-height: 55px
+  box-shadow: 2px 2px 8px 3px rgba(0,0,0,.5)
+
+.invisible
+  @include transition()
+  opacity: 0

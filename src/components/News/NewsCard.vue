@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       bg,
-      styles: styles
+      styles
     }
   }
 }

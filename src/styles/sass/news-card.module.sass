@@ -8,9 +8,15 @@
   z-index: 10
 
 .bg
+  position: relative
+  z-index: 10
+  @include transition(200ms)
   min-height: 504px
   background-repeat: no-repeat
   background-position: center
+  &:hover
+    cursor: pointer
+    transform: translateY(-5px)
 
 .title
   margin-top: 40px
@@ -35,6 +41,7 @@
   font-weight: bolder
 
 .proceed
+  @extend .primary-button
   @include button-shadow()
   background: $deep-orange
   color: $white

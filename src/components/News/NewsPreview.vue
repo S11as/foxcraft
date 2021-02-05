@@ -6,7 +6,7 @@
           Новости проекта
         </div>
       </div>
-      <div class="row mb-5">
+      <div class="row mb-5" :class="styles.wrapperInner">
         <NewsCard v-for="item in news" :news="item"/>
       </div>
       <div class="row justify-content-center">
@@ -19,7 +19,7 @@
         <img class="col-auto" :src="topLeft" alt="">
         <img class="col-auto" :src="topRight" alt="">
       </div>
-      <div :class="styles.imageContainer">
+      <div :class="styles.rectsBot">
         <img class="col-auto" :src="botLeft" alt="">
         <img class="col-auto" :src="botRight" alt="">
       </div>

@@ -1,4 +1,3 @@
-
 .heading
   font-weight: bold
   font-size: 30px
@@ -9,14 +8,20 @@
   @extend .image-container
   top: 0
 
+.rects-bot
+  @extend .image-container
+  margin-top: -180px
+
 .proceed
-  @include button-shadow()
+  @extend .primary-button
   border: none
   background: $orange
   color: $white
   font-weight: bold
   font-size: 20px
   padding: 12px 32px !important
+  position: relative
+  z-index: 10
   &:hover
     cursor: pointer
   span
@@ -29,7 +34,10 @@
       cursor: pointer
 
 .wrapper
-  @extend .mt
-  margin-top: 400px
+  @include section-margin(280px)
   position: relative
   z-index: 10
+
+.wrapper-inner
+  margin-top: 80px
+

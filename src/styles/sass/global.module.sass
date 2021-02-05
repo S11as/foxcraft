@@ -23,12 +23,25 @@ body
 .pl-0
   padding-left: 0 !important
 
-@mixin button-shadow
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,.5)
+@mixin button-shadow($blur:5px, $spread:1px, $darkness:.5)
+  box-shadow: 2px 2px $blur $spread rgba(0,0,0, $darkness)
 
 @mixin section-margin($m: 350px)
   margin-top: $m
 
+@mixin transition($speed: 300ms)
+  transition: $speed ease-in-out
+  &:hover
+    transition: $speed ease-in-out
 
-.mt
-  margin-top: 350px
+.transition
+  transition: 300ms ease-in-out
+
+.primary-button
+  @include transition(200ms)
+  @include button-shadow()
+  &:hover
+    @include transition(200ms)
+    @include button-shadow(5px, 1px, .7)
+    cursor: pointer
+    transform: translateY(-2px)

@@ -9,9 +9,9 @@
           </div>
           <div class="row justify-content-center">
             <button class="col-auto" :class="styles.heroButton">
-              <img :src="pickaxe1">
+<!--              <img :src="pickaxe1">-->
               <span :class="styles.heroButtonText">Начать игру</span>
-              <img :src="pickaxe2">
+<!--              <img :src="pickaxe2">-->
             </button>
           </div>
         </div>
