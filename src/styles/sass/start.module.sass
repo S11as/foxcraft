@@ -1,0 +1,15 @@
+.wrapper
+  @include wrapper(150px)
+
+.primary-bg
+  position: absolute
+  width: 100%
+  z-index: 10
+  background-position: top left
+  background-size: cover
+  height: 2180px
+  margin-top: -190px
+  @include media-breakpoint-up(md)
+    height: 2230px
+  @include media-breakpoint-up(lg)
+    height: 2980px

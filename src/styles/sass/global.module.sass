@@ -10,10 +10,12 @@ $deep-orange: #D2612B
 $light-orange: #FCDBA4
 $dim-gray: #3E3C37
 
+#app
+  width: 100vw !important
 
 body
   font-family: 'Open Sans', sans-serif !important
-  overflow-x: hidden
+  overflow-x: hidden !important
 
 .fluid
   width: 100%
@@ -39,6 +41,11 @@ body
   &:hover
     transition: $speed ease-in-out
 
+@mixin wrapper($m:0px, $z:10)
+  position: relative
+  z-index: $z
+  padding-top: $m
+
 .transition
   transition: 300ms ease-in-out
 
@@ -50,3 +57,10 @@ body
     @include button-shadow(5px, 1px, .7)
     cursor: pointer
     transform: translateY(-2px)
+
+.hero
+  position: absolute
+  z-index: 0
+  height: 1080px
+  width: 1980px
+  overflow: hidden

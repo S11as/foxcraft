@@ -8,11 +8,11 @@
             <img :src="logo" alt="foxcraft logo" :class="styles.logo">
           </div>
           <div class="row justify-content-center">
-            <button class="col-auto" :class="styles.heroButton">
+            <router-link to="/start" class="col-auto" :class="styles.heroButton">
               <img :src="pickaxe1">
               <span :class="styles.heroButtonText">Начать игру</span>
               <img :src="pickaxe2">
-            </button>
+            </router-link>
           </div>
         </div>
         <div class="col-7 col-xxl-6">
@@ -21,7 +21,7 @@
       </div>
     </div>
   </section>
-  <div class="fluid" :class="styles.newsBg"
+  <div class="fluid" :class="styles.primaryBg"
        :style="{ backgroundImage: 'url(' + bg + ')' }">
   </div>
   <section>

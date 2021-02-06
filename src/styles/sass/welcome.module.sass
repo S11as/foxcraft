@@ -1,0 +1,38 @@
+.wrapper
+  @include wrapper(0px, 15)
+  @include section-margin(150px)
+  min-height: 798px
+  width: 100%
+  padding-top: 4px
+
+.wrapper-inner
+  margin-top: 120px !important
+  min-height: 360px
+  padding: 0 !important
+  @include media-breakpoint-up(xxl)
+    margin-top: 220px !important
+    padding: 0 120px !important
+
+  color: $white
+
+
+.triangle
+  @extend .image-container
+  top: 0
+  @media (max-width: 1820px)
+    display: none
+
+
+.triangle-right
+  margin-top: 200px
+
+
+.heading
+  font-size: 32px
+  font-weight: bold
+  text-align: center
+
+
+.sub-heading
+  font-size: 22px
+  text-align: center
