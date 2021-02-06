@@ -9,6 +9,10 @@
   margin-top: 120px !important
   min-height: 360px
   padding: 0 120px
+  @include media-breakpoint-down(xxl)
+    padding: 0 80px
+  @include media-breakpoint-down(md)
+    padding: 0
 
 .questions
   color: $white
@@ -22,6 +26,8 @@
 
 .chevron
   padding: 0 25px
+  @include media-breakpoint-down(lg)
+    display: none
 
 .social-icon
   padding: 0 10px
@@ -29,4 +35,6 @@
 .triangle
   @extend .image-container
   top: 0
+  @media (max-width: 1820px)
+    display: none
 

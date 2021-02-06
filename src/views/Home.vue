@@ -2,20 +2,20 @@
   <section>
     <img :src="hero" alt="minecraft background" :class="styles.hero">
     <div class="container" :class="styles.wrapper">
-      <div class="row justify-content-between">
+      <div class="row justify-content-center justify-content-xl-between">
         <div class="col-auto">
           <div class="row">
             <img :src="logo" alt="foxcraft logo" :class="styles.logo">
           </div>
           <div class="row justify-content-center">
             <button class="col-auto" :class="styles.heroButton">
-<!--              <img :src="pickaxe1">-->
+              <img :src="pickaxe1">
               <span :class="styles.heroButtonText">Начать игру</span>
-<!--              <img :src="pickaxe2">-->
+              <img :src="pickaxe2">
             </button>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-7 col-xxl-6">
           <Slider/>
         </div>
       </div>

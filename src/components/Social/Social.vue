@@ -2,12 +2,12 @@
     <div :class="styles.wrapper" :style="{ backgroundImage: 'url(' + bg + ')' }">
       <div class="container py-5">
           <div class="row" :class="styles.wrapperInner">
-            <div class="col-4 d-flex" :class="styles.questions">У вас есть вопросы?</div>
-            <div class="col-4 d-flex align-items-center" :class="styles.ask">
+            <div class="col-xxl-4 col-12 text-center text-xxl-start" :class="styles.questions">У вас есть вопросы?</div>
+            <div class="col-xxl-4 col-md-6 col-12 d-flex align-items-center justify-content-center" :class="styles.ask">
               Задайте нам их тут
               <img :src="chevron" alt="" :class="styles.chevron">
             </div>
-            <div class="col-4 d-flex align-items-center">
+            <div class="col-xxl-4  col-md-6  col-12 d-flex align-items-center justify-content-center">
               <a href="" :class="styles.socialIcon">
                 <img :src="telegram" alt="">
               </a>

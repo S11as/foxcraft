@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div :class="styles.wrapper">
     <swiper
       :slides-per-view="1"
       :space-between="50"

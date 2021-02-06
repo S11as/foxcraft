@@ -1,19 +1,44 @@
 .wrapper
   @include transition()
-  min-height: 80px
   position: fixed
   z-index: 30
 
+.wrapper-wide
+  min-height: 80px
+
 .wrapper-inner
+  overflow: hidden
   padding-left: 100px !important
   padding-right: 100px !important
 
 .wrapper-active
   @include transition()
   background: $yellow
-  min-height: 55px
   box-shadow: 2px 2px 8px 3px rgba(0,0,0,.5)
+
+.wrapper-active-wide
+  @extend .wrapper-active
+  min-height: 55px
+
 
 .invisible
   @include transition()
   opacity: 0
+
+.burger-line
+  display: block
+  background: $white
+  height: 2px
+  width: 20px
+  margin-top: 5px
+
+.burger
+  &:hover
+    cursor: pointer
+
+.additional-padding
+  padding-bottom: 10px
+  padding-top: 5px
+
+.height-hidden
+  height: 0

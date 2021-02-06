@@ -7,10 +7,14 @@
 .rects-top
   @extend .image-container
   top: 0
+  @include media-breakpoint-down(xl)
+    display: none
 
 .rects-bot
   @extend .image-container
   margin-top: -180px
+  @include media-breakpoint-down(xl)
+    display: none
 
 .proceed
   @extend .primary-button
