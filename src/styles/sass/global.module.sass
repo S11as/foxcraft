@@ -4,6 +4,7 @@
 
 $white: #FFFFFF
 $gray: #D8D5D5
+$dark-gray: #9F9595
 $yellow: #E3A845
 $orange: #EB922C
 $deep-orange: #D2612B
@@ -48,6 +49,11 @@ body
 
 .transition
   transition: 300ms ease-in-out
+  &:hover
+    transition: 300ms ease-in-out
+  &:focus
+    transition: 300ms ease-in-out
+
 
 .primary-button
   @include transition(200ms)

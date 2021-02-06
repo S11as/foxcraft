@@ -12,8 +12,8 @@
 <script>
 // import styles from 'Sass/Form.module.sass'
 
-import useForm from '@/components/auth/use/useForm'
-import { required, minLength } from '@/components/auth/validators'
+import useForm from '@/components/Auth/use/useForm'
+import { required, minLength } from '@/components/Auth/validators'
 
 export default {
   name: 'Form',

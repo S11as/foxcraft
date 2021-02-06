@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import useField from '@/components/auth/use/useField'
+import useField from '@/components/Auth/use/useField'
 
 export default function useForm (init = {}) {
   const form = reactive({})

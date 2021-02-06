@@ -1,0 +1,133 @@
+.wrapper
+  padding-bottom: 30px
+
+.input
+  position: relative
+  z-index: 100
+
+  input
+    width: 400px
+    @extend .transition
+    border: 1px solid $gray
+    position: relative
+    z-index: 100
+    padding: 8px 24px
+    line-height: 5px
+
+    &:hover
+      cursor: text
+
+    &:focus
+      border: 1px solid $yellow
+      outline: none
+
+      + span
+        @extend .transition
+        padding: 0 3px
+        top: -.75em
+        left: .5em
+        font-size: .85em
+        background: $white
+        color: $yellow
+
+    &:not(:placeholder-shown)
+      + span
+        @extend .transition
+        padding: 0 3px
+        top: -.75em
+        left: .5em
+        font-size: .85em
+        background: $white
+
+  span
+    @extend .transition
+    position: absolute
+    top: .6em
+    left: 1em
+    z-index: 150
+    font-size: .9em
+
+
+.heading
+  font-size: 22px
+
+.login
+  @extend .transition
+  width: 400px
+  color: $white
+  background: $yellow
+  border: none
+  outline: none
+  padding: 12px 24px
+  font-weight: bold
+  font-size: 18px
+
+  &:hover
+    background: $orange
+
+
+.additional
+  font-size: 14px
+
+  span
+    color: $dark-gray
+
+  button
+    @extend .transition
+    border: none
+    outline: none
+    color: $yellow
+    background: $white
+
+    &:hover
+      color: $deep-orange
+
+
+.tmp
+  padding: 50px
+  position: relative
+  z-index: 100
+
+
+.checkmark
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  img
+    display: none
+
+.content
+  padding-left: 10px
+
+.checkbox
+  display: flex
+  justify-content: start
+  align-items: center
+  width: 400px
+  font-size: 13px
+  &:hover
+    cursor: pointer
+
+  input
+    display: none
+
+    &:checked
+      + span
+          border: 1px solid $yellow
+          transition: 300ms ease-in-out
+          img
+            transition: 300ms ease-in-out
+            display: block
+    + span
+        transition: 300ms ease-in-out
+        width: 20px !important
+        height: 20px !important
+        border: 1px solid $black
+  a
+    transition: 300ms ease-in-out
+    text-decoration: none
+    color: $yellow
+    &:hover
+      transition: 300ms ease-in-out
+      text-decoration: underline
+      color: $yellow
