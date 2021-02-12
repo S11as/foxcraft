@@ -1,8 +1,5 @@
 <template>
-  <div :class="styles.tmp">
-  </div>
-
-  <modal>
+  <modal id="register" ref="modal">
     <img :src="modalBg" alt="">
     <div class="container" :class="styles.wrapper">
       <div class="row justify-content-center my-3">
@@ -77,7 +74,7 @@
       <div class="row justify-content-center my-2">
         <div class="col-auto" :class="styles.additional">
           <span>Уже с нами?</span>
-          <button>Войти</button>
+          <button @click="this.$emit('call-modal', 'login')">Войти</button>
         </div>
       </div>
     </div>
@@ -95,11 +92,22 @@ export default {
   components: {
     Modal
   },
+  emits: [
+    'call-modal'
+  ],
   data () {
     return {
       styles: styles,
       modalBg,
       modalRect
+    }
+  },
+  methods: {
+    show () {
+      this.$refs.modal.show()
+    },
+    hide () {
+      this.$refs.modal.hide()
     }
   }
 }

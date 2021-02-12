@@ -30,28 +30,39 @@
           <HeaderLink to="/donations">Магазин</HeaderLink>
         </div>
         <div class="col d-flex" :class="[{'flex-column': small, 'col-12': small}]">
-          <HeaderLink to="/">Вход</HeaderLink>
-          <HeaderLink to="/">
+          <HeaderButton v-on:click="showModal('login')">
+            Вход
+          </HeaderButton>
+          <HeaderButton v-on:click="showModal('register')">
             Скачать
             <img :src="download" class="px-2"/>
-          </HeaderLink>
+          </HeaderButton>
         </div>
       </div>
     </div>
+    <login ref="login" v-on:call-modal="showModal"/>
+    <register ref="register" v-on:call-modal="showModal"/>
   </header>
 </template>
 
 <script>
 import styles from 'Sass/header.module.sass'
 import download from 'Icons/download.svg'
-import HeaderLink from '@/components/Header/HeaderLink'
 import logo from 'Assets/header-logo.png'
 import anime from 'animejs'
+
+import Login from '@/components/Auth/Login'
+import Register from '@/components/Auth/Register'
+import HeaderLink from '@/components/Header/HeaderLink'
+import HeaderButton from '@/components/Header/HeaderButton'
 
 export default {
   name: 'Header',
   components: {
-    HeaderLink
+    HeaderLink,
+    HeaderButton,
+    Login,
+    Register
   },
   computed: {
     small: function () {
@@ -122,6 +133,24 @@ export default {
         this.showMenu()
       }
       this.burgerShown = !this.burgerShown
+    },
+    showModal (modal) {
+      this.hideModals()
+      switch (modal) {
+        case 'login': {
+          this.$refs.login.show()
+          break
+        }
+        case 'register': {
+          this.$refs.register.show()
+          break
+        }
+      }
+    },
+    hideModals () {
+      console.log('hide')
+      this.$refs.login.hide()
+      this.$refs.register.hide()
     }
   }
 }

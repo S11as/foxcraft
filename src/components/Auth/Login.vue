@@ -1,5 +1,5 @@
 <template>
-  <modal>
+  <modal id="login" ref="modal">
     <img :src="modalBg" alt="">
     <div class="container" :class="styles.wrapper">
       <div class="row justify-content-center my-3">
@@ -33,7 +33,7 @@
       <div class="row justify-content-center my-2">
         <div class="col-auto" :class="styles.additional">
           <span>В первый раз здесь?</span>
-          <button>Зарегистрироваться</button>
+          <button @click="this.$emit('call-modal', 'register')">Зарегистрироваться</button>
         </div>
       </div>
       <div class="row justify-content-center my-2">
@@ -58,6 +58,9 @@ export default {
   components: {
     Modal
   },
+  emits: [
+    'call-modal'
+  ],
   setup () {
     const form = useForm({
       email: {
@@ -72,11 +75,18 @@ export default {
         }
       }
     })
-    console.log(form)
     return {
       styles,
       modalBg,
       form
+    }
+  },
+  methods: {
+    show () {
+      this.$refs.modal.show()
+    },
+    hide () {
+      this.$refs.modal.hide()
     }
   }
 }

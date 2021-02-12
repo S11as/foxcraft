@@ -1,12 +1,6 @@
 <template>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-          style="position: relative; z-index: 100;">
-    Launch demo modal
-  </button>
-
   <teleport to="#app">
-    <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" :id="id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body p-0">
@@ -20,11 +14,27 @@
 
 <script>
 import styles from 'Sass/modal.module.sass'
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min'
 export default {
   name: 'Modal',
+  props: {
+    id: {}
+  },
   data () {
     return {
-      styles
+      styles,
+      modal: null
+    }
+  },
+  mounted () {
+    this.modal = new bootstrap.Modal(document.getElementById(this.id))
+  },
+  methods: {
+    show () {
+      this.modal.show()
+    },
+    hide () {
+      this.modal.hide()
     }
   }
 }
