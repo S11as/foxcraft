@@ -1,6 +1,55 @@
 .wrapper
   padding-bottom: 30px
 
+
+.input-error
+  position: relative
+  z-index: 100
+
+  input
+    width: 400px
+    @extend .transition
+    border: 1px solid $error
+    position: relative
+    z-index: 100
+    padding: 8px 24px
+    line-height: 5px
+
+    &:hover
+      cursor: text
+
+    &:focus
+      border: 1px solid $error
+      outline: none
+
+      + span
+        @extend .transition
+        padding: 0 3px
+        top: -.75em
+        left: .5em
+        font-size: .85em
+        background: $white
+        color: $error
+
+    &:not(:placeholder-shown)
+      + span
+        @extend .transition
+        padding: 0 3px
+        top: -.75em
+        left: .5em
+        font-size: .85em
+        background: $white
+
+  span
+    @extend .transition
+    position: absolute
+    top: .6em
+    left: 1em
+    z-index: 150
+    font-size: .9em
+    color: $error
+
+
 .input
   position: relative
   z-index: 100
@@ -131,3 +180,13 @@
       transition: 300ms ease-in-out
       text-decoration: underline
       color: $yellow
+
+
+.errors
+  max-width: 417px !important
+  margin: auto
+  img
+    margin-right: 10px
+
+  small
+    color: $error

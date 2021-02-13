@@ -42,6 +42,8 @@
     </div>
     <login ref="login" v-on:call-modal="showModal"/>
     <register ref="register" v-on:call-modal="showModal"/>
+    <restore ref="restore"/>
+    <new-password ref="newPassword"/>
   </header>
 </template>
 
@@ -53,6 +55,8 @@ import anime from 'animejs'
 
 import Login from '@/components/Auth/Login'
 import Register from '@/components/Auth/Register'
+import Restore from '@/components/Auth/Restore'
+import NewPassword from '@/components/Auth/NewPassword'
 import HeaderLink from '@/components/Header/HeaderLink'
 import HeaderButton from '@/components/Header/HeaderButton'
 
@@ -62,7 +66,9 @@ export default {
     HeaderLink,
     HeaderButton,
     Login,
-    Register
+    Register,
+    Restore,
+    NewPassword
   },
   computed: {
     small: function () {
@@ -143,6 +149,14 @@ export default {
         }
         case 'register': {
           this.$refs.register.show()
+          break
+        }
+        case 'restore': {
+          this.$refs.restore.show()
+          break
+        }
+        case 'new-password': {
+          this.$refs.newPassword.show()
           break
         }
       }
