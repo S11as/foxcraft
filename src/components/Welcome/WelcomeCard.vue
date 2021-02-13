@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid" :style="{ backgroundImage: 'url(' + bg + ')' }"
        :class="styles.wrapper">
-    <div class="container">
+    <div class="container" :class="styles.wrapperInner">
       <div class="row">
         <div class="col" :class="[{'order-2':!direction}]">
           <div class="row mt-5">
@@ -19,7 +19,7 @@
                   {{ card.subheading }}
                 </div>
               </div>
-              <div class="row justify-content-center">
+              <div class="row justify-content-center mt-5">
                 <button class="col-auto" :class="styles.link" @click="card.action">
                   {{card.actionText}}
                 </button>

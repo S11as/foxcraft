@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Start from '@/views/Start'
+import Download from '@/views/Download'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/start',
     name: 'Start',
     component: Start
+  },
+  {
+    path: '/download',
+    name: 'Download',
+    component: Download
   }
 ]
 

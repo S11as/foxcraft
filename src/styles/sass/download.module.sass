@@ -1,0 +1,24 @@
+.wrapper
+  @include wrapper(150px)
+
+.primary-bg
+  position: absolute
+  width: 100%
+  z-index: 10
+  background-position: top left
+  background-size: cover
+  height: 780px
+  margin-top: -190px
+  @include media-breakpoint-up(md)
+    height: 780px
+  @include media-breakpoint-up(lg)
+    height: 980px
+
+
+.download
+  @extend .primary-button
+  color: $white
+  background: $deep-orange
+  padding: 8px 32px
+  font-size: 24px
+  border: none
