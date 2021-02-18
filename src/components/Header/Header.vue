@@ -22,13 +22,13 @@
         <div class="col-auto">
           <img :src="logo" alt="" :class="[[styles.transition], {[styles.invisible]:!yellowEnabled, 'd-none':small}]">
         </div>
-        <div class="col-8 d-flex" :class="[{'flex-column': small, 'col-12': small}]">
+        <nav class="col-8 d-flex" :class="[{'flex-column': small, 'col-12': small}]">
           <HeaderLink to="/">Главная</HeaderLink>
           <HeaderLink to="/news">Новости</HeaderLink>
           <HeaderLink to="/rules">Правила</HeaderLink>
           <HeaderLink to="/support">Поддержка</HeaderLink>
           <HeaderLink to="/donations">Магазин</HeaderLink>
-        </div>
+        </nav>
         <div class="col d-flex" :class="[{'flex-column': small, 'col-12': small}]">
           <HeaderButton v-on:click="showModal('login')">
             Вход

@@ -42,8 +42,8 @@
 <script>
 import styles from 'Sass/welcome-card.module.sass'
 import bg from 'Assets/start/bg.png'
-import diamondLeft from 'Assets/start/diamond-left.png'
-import diamondRight from 'Assets/start/diamond-right.png'
+import diamondLeft from 'Assets/diamonds/diamond-left.png'
+import diamondRight from 'Assets/diamonds/diamond-right.png'
 export default {
   name: 'WelcomeCard',
   props: {

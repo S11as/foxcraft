@@ -30,7 +30,7 @@
 <script>
 import styles from 'Sass/news-preview.module.sass'
 import { mapState } from 'vuex'
-import NewsCard from '@/components/News/NewsCard'
+import NewsCard from '@/components/News/NewsPreviewCard'
 import topLeft from 'Assets/news-bg/top-left.png'
 import topRight from 'Assets/news-bg/top-right.png'
 import botLeft from 'Assets/news-bg/bot-left.png'

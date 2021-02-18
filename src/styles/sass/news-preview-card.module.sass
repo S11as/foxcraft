@@ -1,0 +1,54 @@
+.news-bg
+  position: absolute
+  z-index: 0
+
+.preview
+  position: relative
+  z-index: 10
+  width: 100%
+  height: auto
+  max-width: 383px
+  max-height: 223px
+
+.bg
+  position: relative
+  z-index: 10
+  @include transition(200ms)
+  min-height: 504px
+  background-repeat: no-repeat
+  background-position: center
+  &:hover
+    cursor: pointer
+    transform: translateY(-5px)
+
+.title
+  margin-top: 40px
+  text-align: center
+  font-weight: bold
+  color: $white
+  font-size: 20px
+
+.news-text
+  display: flex
+  justify-content: center
+
+.inner-text
+  max-width: 338px !important
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: 4
+  text-overflow: ellipsis
+  overflow: hidden
+  padding: 0 20px
+  color: $white
+  font-weight: bolder
+
+.proceed
+  @extend .primary-button
+  @include button-shadow()
+  background: $deep-orange
+  color: $white
+  font-weight: bold
+  border: none
+  padding: 8px 32px !important
+  margin-top: 30px !important

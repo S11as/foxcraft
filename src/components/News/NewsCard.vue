@@ -1,27 +1,41 @@
 <template>
-  <div class="col-12 col-md-6 col-xl-4 d-flex flex-column align-items-center justify-content-start" :class="styles.bg"
-       :style="{ backgroundImage: 'url(' + bg + ')' }">
-    <div :class="styles.title">
-      {{ news.title }}
-    </div>
-    <img :src="news.previewImg" alt="" :class="styles.preview">
-    <div class="row justify-content-center">
-      <div class="col" :class="styles.innerText">
-        {{ news.text }}
+  <section class="container-fluid" :class='styles.wrapper' :style="{ backgroundImage: 'url(' + bg + ')' }" >
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="row justify-content-center mt-5 mb-4">
+            <h4 class="col-auto" :class="styles.title">
+              {{news.title}}
+            </h4>
+          </div>
+          <div class="row justify-content-center">
+            <p class="col"  :class="styles.text">
+              {{news.preview}}
+            </p>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <router-link exact :to="`/news/${news.id}`" class="col-auto" :class="styles.proceed">
+              Подробнее
+            </router-link>
+          </div>
+        </div>
+        <div class="col-7">
+          <img :src="news.img" :class="styles.image" alt="">
+        </div>
+      </div>
+      <div :class="styles.diamonds">
+        <img :src="diamondLeft" :class="styles.diamondLeft" alt="">
+        <img :src="diamondRight" :class="styles.diamondRight" alt="">
       </div>
     </div>
-    <div class="row justify-content-center">
-      <button class="col-auto" :class="styles.proceed">
-        Подробнее
-      </button>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import styles from 'Sass/news-card.module.sass'
-import bg from 'Assets/news-preview-card.png'
-
+import bg from 'Assets/news-card.png'
+import diamondLeft from 'Assets/diamonds/diamond-left.png'
+import diamondRight from 'Assets/diamonds/diamond-right.png'
 export default {
   name: 'NewsCard',
   props: {
@@ -29,8 +43,10 @@ export default {
   },
   data () {
     return {
+      styles: styles,
       bg,
-      styles
+      diamondLeft,
+      diamondRight
     }
   }
 }

@@ -5,7 +5,7 @@
         <div class="row justify-content-between" :class="styles.footerNav">
           <div class="col container">
             <div class="row">
-              <div class="col-12 col-md-5 col-lg-3 my-5 my-md-0">
+              <nav class="col-12 col-md-5 col-lg-3 my-5 my-md-0">
                 <div class="row" :class="styles.footerTitle">
                   Навигация
                 </div>
@@ -24,7 +24,7 @@
                 <div class="row mt-2">
                   <FooterLink to="/go">Поддержка</FooterLink>
                 </div>
-              </div>
+              </nav>
               <div class="col-12 col-md-5 col-lg-3 mb-5 my-md-0">
                 <div class="row" :class="styles.footerTitle">
                   Авторизация

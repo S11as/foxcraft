@@ -1,54 +1,47 @@
-.news-bg
-  position: absolute
-  z-index: 0
-
-.preview
+.wrapper
   position: relative
   z-index: 10
-  width: 100%
-  height: auto
-  max-width: 383px
-  max-height: 223px
-
-.bg
-  position: relative
-  z-index: 10
-  @include transition(200ms)
-  min-height: 504px
+  min-height: 451px
+  margin-bottom: 200px
   background-repeat: no-repeat
-  background-position: center
-  &:hover
-    cursor: pointer
-    transform: translateY(-5px)
+
+.image
+  transform: scale(0.90) translate(15%, -10%)
+
 
 .title
-  margin-top: 40px
-  text-align: center
-  font-weight: bold
   color: $white
   font-size: 20px
+  font-weight: bold
 
-.news-text
-  display: flex
-  justify-content: center
-
-.inner-text
-  max-width: 338px !important
+.text
+  color: $white
   display: -webkit-box
   -webkit-box-orient: vertical
-  -webkit-line-clamp: 4
   text-overflow: ellipsis
-  overflow: hidden
-  padding: 0 20px
-  color: $white
-  font-weight: bolder
+  line-clamp: 5
 
 .proceed
   @extend .primary-button
-  @include button-shadow()
-  background: $deep-orange
+  text-decoration: none
   color: $white
-  font-weight: bold
-  border: none
-  padding: 8px 32px !important
-  margin-top: 30px !important
+  background: $deep-orange
+  padding: 4px 16px
+  &:hover
+    color: $white
+
+.diamonds
+  display: flex
+  width: 60%
+  justify-content: space-between
+  position: absolute
+  z-index: 20
+  top: 0
+  @include media-breakpoint-down(xl)
+    display: none
+
+.diamond-left
+  transform: translate(-120%, 120%)
+
+.diamond-right
+  transform: translate(-225%, -50%)
