@@ -4,9 +4,19 @@
   min-height: 451px
   margin-bottom: 200px
   background-repeat: no-repeat
+  background-size: cover
+  padding-bottom: 40px !important
+  padding-top: 40px !important
+  @include media-breakpoint-up(lg)
+    padding-bottom: 0px !important
+    padding-top: 0px !important
+    background-size: auto
 
 .image
-  transform: scale(0.90) translate(15%, -10%)
+  width: 100%
+  @include media-breakpoint-up(lg)
+    width: auto
+    transform: scale(0.90) translate(15%, -10%)
 
 
 .title
@@ -37,8 +47,9 @@
   position: absolute
   z-index: 20
   top: 0
-  @include media-breakpoint-down(xl)
+  @media (max-width: 1795px)
     display: none
+
 
 .diamond-left
   transform: translate(-120%, 120%)

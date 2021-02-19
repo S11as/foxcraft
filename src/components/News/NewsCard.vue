@@ -2,7 +2,7 @@
   <section class="container-fluid" :class='styles.wrapper' :style="{ backgroundImage: 'url(' + bg + ')' }" >
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col order-2 order-lg-1">
           <div class="row justify-content-center mt-5 mb-4">
             <h4 class="col-auto" :class="styles.title">
               {{news.title}}
@@ -19,7 +19,7 @@
             </router-link>
           </div>
         </div>
-        <div class="col-7">
+        <div class="col-12 col-lg-7 order-1 order-lg-2">
           <img :src="news.img" :class="styles.image" alt="">
         </div>
       </div>

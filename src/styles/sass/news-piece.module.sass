@@ -4,18 +4,81 @@
 .wrapper
   position: relative
   z-index: 10
-  padding-top: 350px
   padding-left: 0 !important
   padding-right: 0 !important
 
+
 .wrapper-inner
-  min-height: 500px
-  padding: 0 !important
+  min-height: 1200px
+  padding-bottom: 60px
+  padding-top: 30px !important
+  @include media-breakpoint-up(lg)
+    padding-top: 0 !important
 
 .primary-bg
   position: absolute
   top: 0
   z-index: 0
-  height: 3480px
   width: 100%
+  height: 2880px
   @include section-margin(800px)
+  @include media-breakpoint-up(lg)
+    height: 1880px
+
+.header
+  text-transform: uppercase
+  color: $white
+  font-size: 28px
+  font-weight: bold
+
+.heading
+  position: relative
+  z-index: 10
+  padding: 250px 0px
+
+.image
+  width: 100%
+  @include media-breakpoint-up(lg)
+    width: auto
+    transform: translateY(-20%)
+
+.title
+  color: $white
+  font-weight: bold
+  font-size: 24px
+  @include media-breakpoint-up(lg)
+    transform: translateY(-100%)
+
+.article
+  color: $white
+  font-size: 19px
+
+.back
+  @extend .primary-button
+  text-decoration: none
+  color: $white
+  padding: 4px 12px
+  background: $deep-orange
+  &:hover
+    color: $white
+
+.diamonds-top
+  display: flex
+  position: absolute
+  top: -10%
+  left: 0
+  justify-content: space-between
+  width: 90%
+  margin: 0 5%
+  @media (max-width: 1550px)
+    display: none
+
+.diamonds-bot
+  display: flex
+  position: absolute
+  justify-content: space-between
+  width: 90%
+  margin: 0 5%
+  bottom: -10%
+  @media (max-width: 1550px)
+    display: none
