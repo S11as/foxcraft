@@ -1,17 +1,15 @@
 <template>
-  <section class="">
-    <img :src="hero" alt="minecraft background" :class="styles.hero">
-    <div class="container" :class="styles.wrapper">
-      <div class="row justify-content-center">
-        <div class="col-auto">
-          <img :src="logo" alt="">
-        </div>
+  <img :src="hero" alt="minecraft background" :class="styles.hero">
+  <section class="container" :class="styles.wrapper">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <img :src="logo" alt="">
       </div>
     </div>
-    <Welcome :text="text">
-      <img :src="arrow" alt="">
-    </Welcome>
   </section>
+  <Welcome :text="text">
+    <img :src="arrow" alt="">
+  </Welcome>
   <div class="fluid" :class="styles.primaryBg"
        :style="{ backgroundImage: 'url(' + bg + ')' }">
   </div>

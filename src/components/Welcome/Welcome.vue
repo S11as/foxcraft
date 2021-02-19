@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" :class="styles.wrapper" :style="{ backgroundImage: 'url(' + bg + ')' }">
+  <section class="container-fluid" :class="styles.wrapper" :style="{ backgroundImage: 'url(' + bg + ')' }">
     <div class="container">
       <div class="row" :class="styles.wrapperInner">
           <div class="container">
@@ -30,7 +30,7 @@
       <img :src="triangleLeft" height="363" alt="">
       <img :src="triangleRight" :class="styles.triangleRight" alt="">
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

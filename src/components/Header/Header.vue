@@ -27,7 +27,7 @@
           <HeaderLink to="/news">Новости</HeaderLink>
           <HeaderLink to="/rules">Правила</HeaderLink>
           <HeaderLink to="/support">Поддержка</HeaderLink>
-          <HeaderLink to="/donations">Магазин</HeaderLink>
+          <HeaderLink to="/shop">Магазин</HeaderLink>
         </nav>
         <div class="col d-flex" :class="[{'flex-column': small, 'col-12': small}]">
           <HeaderButton v-on:click="showModal('login')">

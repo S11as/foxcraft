@@ -1,0 +1,36 @@
+.logo
+  @include wrapper(0px, 15)
+  padding-top: 150px
+  width: 100%
+
+.primary-bg
+  position: absolute
+  width: 100%
+  z-index: 10
+  background-position: top left
+  background-size: cover
+  height: 2180px
+  margin-top: -190px
+  @include media-breakpoint-up(md)
+    height: 2230px
+  @include media-breakpoint-up(lg)
+    height: 2980px
+
+.server-nav
+  position: relative
+  z-index: 10
+
+.server
+  @extend .primary-button
+  color: $white
+  text-decoration: none
+  background: $yellow
+  margin: 0 20px
+  padding: 8px 24px
+  font-size: 18px
+  &:hover
+    color: $white
+
+.server-active
+  @extend .server
+  background: $deep-orange
