@@ -26,11 +26,28 @@
   text-decoration: none
   background: $yellow
   margin: 0 20px
-  padding: 8px 24px
+  padding: 8px 36px !important
   font-size: 18px
   &:hover
     color: $white
 
 .server-active
   @extend .server
+  background: $deep-orange
+
+.sub-nav-link
+  @extend .primary-button
+  color: $white
+  text-decoration: none
+  background: $yellow
+  margin: 0 20px
+  padding: 8px 24px
+  font-size: 16px
+  box-shadow: none
+  &:hover
+    box-shadow: none
+    color: $white
+
+.sub-nav-link-active
+  @extend .sub-nav-link
   background: $deep-orange

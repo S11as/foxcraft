@@ -7,6 +7,8 @@ import NewsPiece from '@/views/News/NewsPiece'
 import Shop from '@/views/Shop/Shop'
 import ShopPrivileges from '@/views/Shop/ShopPrivileges'
 
+import store from '../../store/store'
+
 const routes = [
   {
     path: '/',
@@ -57,7 +59,10 @@ const routes = [
   {
     path: '/shop',
     name: 'Shop',
-    component: Shop
+    component: Shop,
+    redirect: () => {
+      return `/shop/${store.getters.redirectServer.id}/privileges`
+    }
   }
 ]
 

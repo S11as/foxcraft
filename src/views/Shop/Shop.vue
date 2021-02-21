@@ -13,7 +13,7 @@
   <div class="fluid" :class="styles.primaryBg"
        :style="{ backgroundImage: 'url(' + bg + ')' }">
   </div>
-  <nav class="container" :class="styles.serverNav">
+  <nav class="container my-4" :class="styles.serverNav">
     <div class="row justify-content-center">
       <router-link class="col-auto" v-for="item in servers" :to="`/shop/${item.id}`"
                    :class="[styles.server, {[styles.serverActive]: linkActive(item.id)}]">
@@ -21,7 +21,7 @@
       </router-link>
     </div>
   </nav>
-  <nav class="container" :class="styles.serverNav">
+  <nav class="container my-5" :class="styles.serverNav">
     <div class="row justify-content-center">
       <router-link class="col-auto" exact :exact-active-class="styles.subNavLinkActive"
                    :class='styles.subNavLink' :to="`/shop/${server.id}/privileges`">
