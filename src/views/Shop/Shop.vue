@@ -1,5 +1,6 @@
 <template>
   <img :src="hero" alt="" :class="styles.hero">
+  <div class="" ref="hhh"></div>
   <section class="container" :class="styles.logo">
     <div class="row justify-content-center">
       <div class="col-auto">
@@ -73,9 +74,6 @@ export default {
           ' на привилегии'
       }
     }
-  },
-  mounted () {
-    console.log(this.server, this.servers)
   },
   methods: {
     linkActive (id) {

@@ -162,7 +162,6 @@ export default {
       }
     },
     hideModals () {
-      console.log('hide')
       this.$refs.login.hide()
       this.$refs.register.hide()
     }
