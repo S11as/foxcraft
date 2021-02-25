@@ -2,7 +2,7 @@
   <section class="">
     <div class="container" :class="styles.wrapper">
       <div class="row justify-content-between">
-        <shop-card v-for="item in renderCards" :card="item"/>
+        <privilege-card v-for="item in renderCards" :card="item"/>
       </div>
     </div>
   </section>
@@ -16,7 +16,7 @@
              :ref="bindPrivilegeRef(item.id)">[{{ item.title }}]
         </div>
       </div>
-      <div class="row justify-content-between" :class="styles.line" v-for="renderTrait in renderTable">
+      <div class="row justify-content-between" v-for="renderTrait in renderTable">
         <div class="col-5 text-center py-4">
           {{ renderTrait.text }}
         </div>
@@ -33,13 +33,13 @@
 
 <script>
 import styles from 'Sass/shop-privileges.module.sass'
-import ShopCard from '@/views/Shop/ShopCard'
+import PrivilegeCard from '@/views/Shop/PrivilegeCard'
 import cross from 'Assets/shop/cross.png'
 
 export default {
   name: 'ShopPrivileges',
   components: {
-    ShopCard
+    PrivilegeCard
   },
   computed: {
     server () {

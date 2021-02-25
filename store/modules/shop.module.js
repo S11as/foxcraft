@@ -1,3 +1,5 @@
+import { CHANGE_PAGINATION_PAGE } from '../types'
+
 const state = () => {
   return {
     servers: [
@@ -261,7 +263,68 @@ const state = () => {
           }
         ]
       }
-    ]
+    ],
+    items: {
+      totalPages: 15,
+      perPage: 10,
+      currentPage: 1,
+      data: [
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        },
+        {
+          img: require('Assets/shop/block.png'),
+          title: 'Блок травы',
+          amount: 64,
+          price: 100
+        }
+      ]
+    }
   }
 }
 
@@ -312,7 +375,14 @@ const getters = {
     return null
   }
 }
+
+const mutations = {
+  [CHANGE_PAGINATION_PAGE] (state, payload) {
+    state.items.currentPage = payload
+  }
+}
 export default {
   getters,
+  mutations,
   state
 }

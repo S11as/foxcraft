@@ -6,6 +6,7 @@ import News from '@/views/News/News'
 import NewsPiece from '@/views/News/NewsPiece'
 import Shop from '@/views/Shop/Shop'
 import ShopPrivileges from '@/views/Shop/ShopPrivileges'
+import ShopBlocks from '@/views/Shop/ShopBlocks'
 
 import store from '../../store/store'
 
@@ -52,7 +53,7 @@ const routes = [
       },
       {
         path: 'blocks',
-        component: ShopPrivileges
+        component: ShopBlocks
       }
     ]
   },

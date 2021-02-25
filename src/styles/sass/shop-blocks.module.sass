@@ -1,0 +1,30 @@
+.wrapper
+  position: relative
+  z-index: 10
+
+.pricing-caption
+  color: black
+  font-weight: bold
+  padding: 25px 0
+
+.page
+  @include transition()
+  color: $dark-gray
+  width: 36px
+  height: 36px
+  display: flex
+  justify-content: center
+  align-items: center
+  &:hover
+    transform: translateY(-2px)
+    cursor: pointer
+
+.page-active
+  color: $white
+  background: $orange
+
+.separator
+  @extend .page
+  &:hover
+    transform: none
+    cursor: default
