@@ -11,7 +11,7 @@
   <welcome :text="text">
     <img :src="arrow" alt="">
   </welcome>
-  <div class="fluid" :class="styles.primaryBg"
+  <div class="fluid" :class="primaryBgClass"
        :style="{ backgroundImage: 'url(' + bg + ')' }">
   </div>
   <nav class="container my-4" :class="styles.serverNav">
@@ -57,7 +57,16 @@ export default {
     },
     ...mapState({
       servers: state => state.shop.servers
-    })
+    }),
+    primaryBgClass: function () {
+      const path = this.$route.path.split('/')
+      if (path.includes('blocks')) {
+        return styles.primaryBlockBg
+      } else if (path.includes('privileges')) {
+        return styles.primaryBg
+      }
+      return styles.primaryBg
+    }
   },
   data () {
     return {

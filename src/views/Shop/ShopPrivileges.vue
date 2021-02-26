@@ -1,7 +1,7 @@
 <template>
   <section class="">
     <div class="container" :class="styles.wrapper">
-      <div class="row justify-content-between">
+      <div class="row justify-content-center justify-content-lg-between">
         <privilege-card v-for="item in renderCards" :card="item"/>
       </div>
     </div>
@@ -9,7 +9,7 @@
   <section class="my-5">
     <div class="container" :class="styles.advantages">
       <div class="row justify-content-between" :class="styles.privilegeHeader">
-        <div class="col-5 text-center" :class="styles.privilege">
+        <div class="col-2 col-md-5  text-center overflow-hidden" :class="[styles.privilege, styles.privilegeCaption]">
           Возможность
         </div>
         <div class="col-auto text-center" :class="styles.privilege" v-for="item in server.privileges"
@@ -17,13 +17,14 @@
         </div>
       </div>
       <div class="row justify-content-between" v-for="renderTrait in renderTable">
-        <div class="col-5 text-center py-4">
+        <div class="col-2 col-md-5  text-center py-4" :class="styles.trait">
           {{ renderTrait.text }}
         </div>
         <div class="col-auto text-center py-4" :class="[definePrivilegeBg(privilege.tier)]"
-             :style="{width: definePrivilegeWidth(privilege.id) +'px'}"
-             v-for="privilege in server.privileges">
-          <span v-if="traitPertainsToPrivilege(renderTrait.id, privilege.id)">{{ definePrivilegeVal(renderTrait.id, privilege.id) }}</span>
+             v-for="privilege in server.privileges" :ref="bindTraitRef(privilege.id)">
+          <span v-if="traitPertainsToPrivilege(renderTrait.id, privilege.id)">{{
+              definePrivilegeVal(renderTrait.id, privilege.id)
+            }}</span>
           <img v-else :src="cross"/>
         </div>
       </div>
@@ -56,8 +57,18 @@ export default {
     return {
       styles: styles,
       privileges: {},
+      traits: [],
       cross
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+      this.setTraitsWidth()
+    })
+  },
+  beforeUnmount () {
+    window.removeEventListener('resize', this.onResize)
   },
   methods: {
     traitPertainsToPrivilege (traitId, privilegeId) {
@@ -68,10 +79,26 @@ export default {
         this.privileges[privilegeId] = r
       }
     },
-    definePrivilegeWidth (privilegeId) {
-      for (const key in this.privileges) {
-        if (key === privilegeId) {
-          if (this.privileges[key]) { return this.privileges[key].clientWidth }
+    bindTraitRef (privilegeId) {
+      return (r) => {
+        this.traits.push({
+          ref: r,
+          privilegeId: privilegeId
+        })
+      }
+    },
+    onResize () {
+      this.setTraitsWidth()
+    },
+    setTraitsWidth () {
+      for (const item of this.traits) {
+        const id = item.privilegeId
+        for (const key in this.privileges) {
+          if (key === id) {
+            if (this.privileges[key]) {
+              item.ref.style.width = this.privileges[key].clientWidth + 'px'
+            }
+          }
         }
       }
     },

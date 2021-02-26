@@ -1,5 +1,5 @@
 <template>
-  <div :class="styles.wrapper">
+  <div class="m-3 m-sm-4 m-lg-3 m-xxl-0" :class="styles.wrapper">
     <div :class="styles.wrapperInner">
       <img :src="card.img" :class="styles.img" alt="">
       <span :class="styles.title">[{{card.title}}]</span>

@@ -16,7 +16,7 @@ const state = () => {
               {
                 id: '1',
                 pertain: true,
-                text: 'text',
+                text: 'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
                 val: 10
               },
               {

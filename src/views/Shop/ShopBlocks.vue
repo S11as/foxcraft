@@ -1,9 +1,9 @@
 <template>
   <section class="container" :class="styles.wrapper">
     <div class="row justify-content-end" :class="styles.pricingCaption">
-      <div class="col-1 text-center">Количество</div>
-      <div class="col-1 text-center">Цена</div>
-      <div class="col-2"></div>
+      <div class="col-3 col-lg-1 text-center">Количество</div>
+      <div class="col-2 col-lg-1 text-center">Цена</div>
+      <div class="col-2 d-lg-block d-none"></div>
     </div>
     <item-card v-for="item in cards" :card="item"/>
     <div class="row justify-content-center mt-5">
