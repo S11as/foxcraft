@@ -1,5 +1,5 @@
 <template>
-  <footer class="position-relative">
+  <footer class="position-relative" :class="{'d-none': excluded}">
     <div class="pt-5 container-fluid" :class="styles.wrapper">
       <div class="container" :class="styles.wrapperInner">
         <div class="row justify-content-between" :class="styles.footerNav">
@@ -52,7 +52,7 @@
                     </a>
                   </div>
                   <div class="col-auto px-0" :class="styles.discord">
-                    <a href="" >
+                    <a href="">
                       <img :src="discord" alt="" width="45" height="45">
                     </a>
                   </div>
@@ -69,7 +69,8 @@
           </div>
         </div>
         <div class="row justify-content-center py-4">
-          <div class="col-auto text-center" :class="styles.copy">&copy; 2001-{{ new Date().getFullYear() }} Foxcraft. Все права
+          <div class="col-auto text-center" :class="styles.copy">&copy; 2001-{{ new Date().getFullYear() }} Foxcraft.
+            Все права
             защищены
           </div>
         </div>
@@ -88,6 +89,7 @@ import telegram from 'Assets/footer/telegram.svg'
 import vk from 'Assets/footer/vk.svg'
 import discord from 'Assets/footer/discord.svg'
 import circle from 'Assets/footer/circle.png'
+
 export default {
   name: 'Footer',
   components: {
@@ -95,12 +97,24 @@ export default {
   },
   data () {
     return {
+      excludeFrom: [
+        'Profile'
+      ],
+      excluded: false,
       styles: styles,
       logo,
       telegram,
       vk,
       discord,
       circle
+    }
+  },
+  mounted () {
+    this.excluded = this.excludeFrom.includes(this.$route.name)
+  },
+  watch: {
+    $route (to) {
+      this.excluded = this.excludeFrom.includes(to.name)
     }
   }
 }
