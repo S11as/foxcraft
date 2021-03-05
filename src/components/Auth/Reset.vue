@@ -4,7 +4,7 @@
     <div class="container" :class="styles.wrapper">
       <div class="row justify-content-center my-3">
         <div class="col-auto" :class="styles.heading">
-          Восстановление пароля
+          Сброс пароля
         </div>
       </div>
       <div class="row justify-content-center my-5">
@@ -18,13 +18,13 @@
       <div class="row justify-content-center mt-4 mb-5">
         <div class="col-auto">
           <button :class="styles.login">
-            Отправить ссылку
+            Войти
           </button>
         </div>
       </div>
       <div class="row justify-content-center my-2">
         <div class="col-auto" :class="styles.additional">
-          <span>Вам будет выслана ссылка для восстановления пароля</span>
+          <span>Вам будет выслана ссылка для сброса пароля</span>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@ import Modal from '@/components/Auth/Modal'
 import modalBg from 'Assets/modal-bg.png'
 
 export default {
-  name: 'Restore',
+  name: 'Reset',
   components: {
     Modal
   },
