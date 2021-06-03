@@ -24,10 +24,10 @@
         </div>
         <nav class="col-auto col-xxl-8 d-flex" :class="[{'flex-column': small, 'col-12': small}]">
           <HeaderLink to="/">Главная</HeaderLink>
-          <HeaderLink to="/news">Новости</HeaderLink>
+<!--          <HeaderLink to="/news">Новости</HeaderLink>-->
           <HeaderLink to="/rules">Правила</HeaderLink>
           <HeaderLink to="/support">Поддержка</HeaderLink>
-          <HeaderLink to="/shop">Магазин</HeaderLink>
+<!--          <HeaderLink to="/shop">Магазин</HeaderLink>-->
         </nav>
         <div class="col-xxl col-auto d-flex" :class="[{'flex-column': small, 'col-12': small}]">
           <HeaderButton v-on:click="showModal('login')">
